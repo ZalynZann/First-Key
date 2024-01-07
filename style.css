@@ -11,7 +11,6 @@
 
 @import url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/library.less");
  @import url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/variables.less");
-
 *{
   padding: 0;
   margin: 0;
@@ -28,13 +27,13 @@
   --main-color: #ffa343;
   
   --h2-font: 3rem;
-  --h1-font: 6rem;
+  --h1-font: 5rem;
   --p-font: 1rem;
  }
 
  body{
   color: #000;
-  background: #040404;
+  background: linear-gradient(to top, rgba(231, 237, 237, 0.916),rgba(0, 0, 0, 0.534));
  }
 
 header{
@@ -91,7 +90,7 @@ header{
 }
 
 #menu-icon{
-  color: #000;
+  color: #ffffff;
   font-size: 30px;
   cursor: pointer;
   z-index: 10001;
@@ -106,7 +105,7 @@ section{
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.862), rgba(57, 92, 92, 0.916)), url(images/sean-pollock-PhYq704ffdA-unsplash.jpg);
+  background-image: linear-gradient(to top, rgba(152, 151, 151, 0.862), rgba(57, 92, 92, 0.916)), url(images/sean-pollock-PhYq704ffdA-unsplash.jpg);
   background-size: cover;
   background-position: bottom center;
   display: flex;
@@ -124,18 +123,23 @@ section{
 }
 
 .home-text h1{
-  font-size: 50px;
+  font-size: var(--h1-font);
   font-weight: 800;
   line-height: 1.2;
   color: #000;
   margin-bottom: 20px;
 }
 
+.home-text h1 span{
+  color: #00e1ff;
+}
+
+
 .home-text p{
-  font-size: 10px;
+  font-size: var(--p-font);
   font-weight: 500;
   line-height: 30px;
-  color: #ffffffab;
+  color: #2a2a2a;
   margin-bottom: 35px;
 }
 
@@ -191,7 +195,7 @@ section{
 .feature-content h4{
   font-size: 17px;
   font-weight: 500;
-  color: #f7f6f6;
+  color: #000;
   cursor: pointer;
   transition:  all .50s ease;
 }
@@ -216,14 +220,14 @@ section{
 .holiday-text h5{
   font-size: 12px;
   font-weight: 600;
-  color: #00bcd4;
+  color: #00e1ff;
   text-transform: uppercase;
   letter-spacing: 6px;
   margin-bottom: 20px;
 }
 
 .holiday-text h2{
-  font-size: 22px;
+  font-size: var(--h2-font);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 25px;
@@ -231,10 +235,10 @@ section{
 }
 
 .holiday-text p{
-  font-size: 10px;
+  font-size: var(--p-font);
   font-weight: 500;
   line-height: 30px;
-  color: #ffffffab;
+  color: #2a2a2a;
   margin-bottom: 35px;
 }
 
@@ -245,174 +249,199 @@ section{
   color: #666;
 }
 
+.newsletter-content{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.newsletter-text h2{
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #272828;
+}
+
+.newsletter-text p{
+  font-size: var(--p-font);
+  font-weight: 500;
+  color: #737272;
+}
+
+.newsletter-content form{
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+  gap: 1rem;
+}
+
+.newsletter-content form input:first-child{
+  padding: 15px;
+  background: #e5e5e5;
+  font-size: 18px;
+  color: #606060;
+  border-radius: 5px;
+}
+
+.destination{
+  background-image: linear-gradient(to left, rgba(152, 151, 151, 0.862), rgba(48, 86, 86, 0.916)), url(images/modern-business-building-scenery-touching-sky.jpg);
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.title h2{
+  font-size: var(--h2-font);
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #272828;
+}
+
+.destination-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-gap: 2rem;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.col-content{
+  position: relative;
+}
+
+.col-content img{
+  width: 90%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: brightness(80%);
+  transition: all .3s cubic-bezier(.495, .05, .55, .95);
+  will-change: filter;
+}
+
+.col-content h5{
+  position: absolute;
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+  left: 15px;
+  bottom: 60px;
+}
+
+.col-content p{
+  position: absolute;
+  font-size: var(--p-font);
+  color: #ffffff;
+  left: 15px;
+  bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.col-content img:hover{
+  filter: brightness(100%) hue-rotate(45deg);
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+
+
 /*----------------------------------------------------------------Blog ----------------------------------------------------------------*/
 #blog{
-  background:  linear-gradient(135deg, hsla(0, 0%, 3%, 0.858),hsla(183, 97%, 27%, 0.564)),url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80);
-  background-size:cover;
-  background-position:right;
-  background-attachment:fixed;
-  overflow-x: hidden;
-}
-#header1{
-  margin:20px;
-}
-#header1>h1{
-  text-align:center;
-  font-size:3rem;
-  font-weight: 900;
-  font-family: 'Raleway', sans-serif;
-}
-#header1>p{
-  text-align:center;
-  font-size:1rem;
-  font-family: 'Raleway', sans-serif;
-}
-.containerB{
-  width:100vw;
-  display:flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  padding:40px 20px;
-}
-.cardB{
-  display:flex;
-  flex-direction:column;
-  width:400px;
-  margin-bottom:60px;
-}
-.cardB>div{
-  box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
-}
-.card-image{
-  width:400px;
-  height:250px;
-}
-.card-image>img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:bottom;
-}
-.card-text{
-  margin:-30px auto;
-  margin-bottom:-50px;
-  height:300px;
-  width:300px;
-  border-radius: 20px;
-  background-color:#1D1C20;
-  color:#fff;
-  padding:20px;
-}
-.card-meal-type{
-  font-style:italic;
-}
-.card-title{
-  font-size:2.2rem;
-  margin-bottom:20px;
-  margin-top:5px;
-}
-.card-body{
-  font-size:1.25rem;
-}
-.card-price{
-  width:100px;
-  height:59px;
-  background-color:rgb(18, 147, 180);
-  color:#fff;
-  margin-left:auto;
-  font-size:17px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.button{
-  cursor: pointer;
-  border-radius: 5px;
-
-}
-
-@media (max-width: 922px){
-  #blog{
-    overflow-x: hidden;
-    max-width: 100%;
-    padding-left: 20px;
-  }
-  .button {
-    cursor: pointer;
-    border-radius: 5px;
-    margin-right: 16px;
-}
-
-.cardB {
   display: flex;
-  flex-direction: row;
-  width: 400px;
-  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: #edecec;
 }
 
-.card-image {
-  width: 241px;
-    height: 128px;
-    padding-right: 10px;
-}
-.card-text {
-    margin: -30px auto;
-    margin-bottom: -50px;
-    height: 300px;
-    width: 300px;
-    background: none;
-    color: #fff;
-    padding: 20px;
+.blog-heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.cardB>div {
-  box-shadow: none;
+.blog-heading span{
+  color: #f33c3c;
 }
 
-.card-meal-type {
-  font-style: italic;
-  font-size: 12px;
+.blog-heading h3{
+  font-size: 2.4rem;
+  color: #2b2b2b;
+  font-family: 600;
 }
 
-.card-price {
-  width: 84px;
-    height: 31px;
-    background-color: rgb(18, 147, 180);
-    color: #fff;
-    margin-top: 39px;
-    font-size: 8px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.card-title {
-  font-size: 16px;
-    margin-bottom: 4px;
-    text-align: center;
-    margin-top: 5px;
-}
-.card-body {
-  font-size: 11px;
-  text-align: center;
-}
+.blog-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 576px){
-  .containerB {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 40px 20px;
+.blog-box{
+  width: 350px;
+  background-color: #ffffff;
+  border: 1px solid #ececec;
+  margin: 20px;
+  border-radius: 5px;
 }
-#blog {
-  overflow-x: hidden;
-  max-width: 100%;
-  padding: 20px;
+
+.blog-img{
+  width: 100%;
+  height: auto;
 }
+
+.blog-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
+.blog-text{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-text span{
+  color: #f33c3c;
+  font-size: 0.9rem;
+}
+
+.blog-text .blog-title{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #272727;
+}
+
+.blog-text .blog-title:hover{
+  color: #f33c3c;
+  transition: all ease 0.3s;
+}
+
+.blog-text p{
+  color: #9b9b9b;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 20px 0px;
+}
+
+.blog-text a{
+  color: #0f0f0f;
+}
+
+.blog-text a:hover{
+  color: #f33c3c;
+  transition: all ease 0.3s;
+}
+
 
 /*----------------------------------------------------------------Contact Us -----------------------------------------------------------*/
 
@@ -635,4 +664,5 @@ footer {
   text-align: center;
 }
 }
+
 
